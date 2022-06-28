@@ -1,51 +1,12 @@
 mov ah, 0x0e
-int 0x10
-mov al, 'H'
-
-mov ah, 0x0e
-mov al, 'E'
+mov al, 0x41
 int 0x10
 
-mov ah, 0x0e
-mov al, 'L'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'L'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'L'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'O'
-int 0x10
-
-mov ah, 0x0e
-mov al, ' '
-int 0x10
-
-mov ah, 0x0e
-mov al, 'W'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'O'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'R'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'L'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'D'
-int 0x10
+loop:
+    inc al
+    int 0x10
+    jmp loop
 
 jmp $
-times 510-($-$$) db 0
+times 510-($-$$) db 0 ;; can also use 1
 db 0x55, 0xaa
