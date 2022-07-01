@@ -61,10 +61,11 @@ cmp bx, 5 ;; cmp A, B
 ```
 
 and theses are the conditional jump instruction for each possibilty
-
+```
 if (A == B): je
 if (A != B): jne
 if (A > B): jg
 if (A < B): jl
 if (A >= B): jge
 if (A <= B): jle
+```
