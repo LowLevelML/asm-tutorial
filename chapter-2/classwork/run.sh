@@ -1,3 +1,3 @@
 #!/bin/sh
 
-qemu-system-x86_64 "print.bin"
+nasm -f bin "print.asm" -o "print.bin"
