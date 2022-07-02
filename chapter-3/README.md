@@ -41,3 +41,48 @@ jmp $
 times 510-($-$$) db 0
 db 0x55, 0xaa
 ```
+
+```asm
+mov al, [] ;; dereferences pointer at current pointer location and stores it at al
+```
+
+# KeyBoard Input
+
+bios interrupt 0x16 with ah = 0
+
+```asm
+mov ah, 0
+int 0x16
+```
+
+system waits for key press
+
+output in 
+
+```console
+al = ascii charecter
+ah = scancode
+```
+
+saving one char to mem
+
+```asm
+char:
+    db 0
+
+mov ah, 0
+int 0x16
+
+mov al, [char]
+```
+
+to save input string to mem we can use a buffer
+
+```asm
+buffer:
+    times 10 db 0
+    mov bx, buffer
+    mov [bx], al
+    inc bx
+
+```
